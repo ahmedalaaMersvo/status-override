@@ -7,6 +7,7 @@ export const useAppStore = defineStore('app', () => {
   const profileId = ref(null);
   const fullName = ref(null);
   const title = ref(null);
+  const office = ref(null);
   const profilePicture = ref(null);
   const currentStatus = ref(null);
   const toggleValue = ref(null);
@@ -17,8 +18,9 @@ export const useAppStore = defineStore('app', () => {
       const response = await api.getManagerProfileByEmail(email);
       const { employee, statusObject, employeeCurrentStatus } = response.data;
       profileId.value = employee?.id;
-      fullName.value = employee?.fullName;
-      title.value = employee?.title;
+      fullName.value = employee?.fullNameAr;
+      title.value = employee?.titleAr;
+      office.value = employee?.office;
       profilePicture.value = employee?.attachment?.filePath;
       toggleValue.value = employee?.getProfileStatusFromExchange;
       currentStatus.value = employeeCurrentStatus?.id;
@@ -58,6 +60,7 @@ export const useAppStore = defineStore('app', () => {
     profileId,
     fullName,
     title,
+    office,
     profilePicture,
     currentStatus,
     toggleValue,

@@ -2,7 +2,10 @@
   <q-layout class="login-layout" view="lhh LpR lff">
     <q-header reveal class="login-header">
       <q-toolbar class="q-mt-lg q-mb-md">
-        <img class="q-ml-auto" src="/status-override/images/khafji-logo.png" />
+        <img
+          class="q-ml-auto login-header__logo"
+          src="/status-override/images/khafji-logo.png"
+        />
       </q-toolbar>
     </q-header>
 
@@ -54,7 +57,6 @@
               <q-btn
                 rounded
                 class="full-width submit-btn"
-                color="primary"
                 label="Login"
                 @click="submit"
               />

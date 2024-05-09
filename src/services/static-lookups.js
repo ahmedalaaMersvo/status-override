@@ -1,4 +1,4 @@
-export const colorNames = ['primary', 'accent', 'secondary', 'dark'];
+export const colorNames = ['primary', 'accent', 'secondary', 'dark', 'info'];
 
 export const shadowValues = [
   'rgba(97, 244, 170, 0.2)',
@@ -8,8 +8,9 @@ export const shadowValues = [
 ];
 
 export const iconNames = [
-  'available.svg',
-  'busy.svg',
-  'inMeeting.svg',
-  'workingRemotely.svg',
+  'available',
+  'busy',
+  'businessmen',
+  'inMeeting',
+  'workingRemotely',
 ];

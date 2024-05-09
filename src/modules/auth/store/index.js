@@ -27,6 +27,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function logout() {
     const refreshToken = storage.getRefreshToken();
+
     try {
       const response = await api.logout({ refreshToken });
       timeOutLoader();
@@ -70,5 +71,10 @@ export const useAuthStore = defineStore('auth', () => {
       return Promise.reject(error);
     }
   }
-  return { login, logout, refreshToken };
+  const logoutUser = () => {
+    console.log('go out');
+    storage.removeUser();
+    router.push('/auth/login');
+  };
+  return { login, logout, refreshToken, logoutUser };
 });

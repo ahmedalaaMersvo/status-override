@@ -2,6 +2,10 @@
   background: #f5f5f5;
   .login-header {
     background: #f5f5f5;
+    &__logo {
+      width: 116px;
+      object-fit: contain;
+    }
   }
   .login-card-wrapper {
     background: #f5f5f5;
@@ -10,10 +14,12 @@
       border-radius: 76px 0 0 0;
       height: calc(100vh - 100px);
       .text-login {
-        color: #c8a978;
+        color: $primary;
         letter-spacing: 0.1em;
       }
       .submit-btn {
+        background-color: #013d45;
+        color: #fff;
         box-shadow: 0px 30px 30px -20px rgba(70, 209, 139, 0.7);
       }
     }

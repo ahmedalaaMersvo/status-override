@@ -1,53 +1,154 @@
+@font-face {
+  font-family: 'DG Heaven';
+  src: url('../../public/fonts/DG-Heaven-Regular.ttf') format('truetype');
+}
 .profile-layout {
-  background: #f5f5f5;
+  border-right: solid 36px #235258;
   min-height: auto !important;
+
+  .logout-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: -33px;
+  }
   .profile-header {
-    background: #f5f5f5;
-    .header-toolbar {
-      margin-bottom: 85px;
-    }
+    border-bottom: solid 10px #235258;
+    background: linear-gradient(180deg, #235258 10%, rgb(248, 249, 249) 100%);
+
     .toggle-status,
     .q-toggle__inner--truthy {
       color: #b21f8a;
     }
     .profile-container {
-      background-image: url('/images/wave.png');
-      background-repeat: no-repeat;
-      .profile-img-wrapper {
-        width: 100%;
-      }
       .profile-work {
         color: #969696;
       }
     }
   }
+  .user-data {
+    width: 90%;
+    margin: auto;
+    &_name {
+      padding-right: 20px;
+      padding-bottom: 10px;
+      // width: fit-content;
+      position: relative;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 40px;
+      font-family: 'DG Heaven';
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(179, 204, 208, 1) 1%,
+        rgba(48, 97, 103, 1) 100%,
+        rgba(179, 204, 208, 1) 100%,
+        rgba(1, 61, 69, 1) 101%
+      );
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      &::before {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        content: '';
+        display: block;
+        height: 80%;
+        width: 5px;
+        background-color: #8faaad;
+        border-radius: 10px;
+      }
+      &::after {
+        position: absolute;
+        right: 20px;
+        bottom: 0px;
+        content: '';
+        display: block;
+        width: 40%;
+        height: 1px;
+        background-color: #8faaad;
+        border-radius: 10px;
+      }
+    }
+    &_title {
+      padding-right: 20px;
+      font-family: 'DG Heaven';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      color: #000;
+    }
+    &_office {
+      width: 164px;
+      height: 45px;
+      margin: 15px 20px 0 0;
+      background: #fff;
+      box-shadow: 0 5px 5px 0px #0000002b;
+
+      span {
+        font-family: 'PT Serif';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+      }
+      span:first-of-type {
+        color: #9e9e9e;
+        margin-right: 5px;
+      }
+    }
+  }
   .status-card {
-    border-radius: 50px 0 0 0;
-    .status-tabs {
-      .q-tabs__content {
-        flex-wrap: wrap !important;
-        gap: 10px;
-        justify-content: center;
-        .q-tab {
-          width: 157px;
-          height: 85px;
-          border-radius: 14px;
-          border: 1px solid #efefef;
-          justify-content: start;
-          .q-tab__content {
-            flex-direction: column;
-            align-items: start;
-            gap: 10px;
-          }
+    margin-top: 40px;
+
+    &_toggle {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 28px;
+      font-family: 'DG Heaven';
+      .q-toggle__inner--truthy {
+        color: #235258;
+        .q-toggle__thumb {
+          color: #e8eaea;
         }
       }
     }
 
-    .change-btn {
-      text-align: center;
-      background-color: #2e2e2e;
-      width: 210px;
-      height: 50px;
+    .status-tabs {
+      .q-tabs__content {
+        flex-wrap: wrap !important;
+        gap: 10px;
+        justify-content: end;
+        .q-tab {
+          max-width: 180px;
+          max-height: 55.6px !important;
+          min-height: 52px !important;
+          border-radius: 35px;
+          border: 3px solid #d3d3d3;
+          justify-content: center;
+          .q-tab__content {
+            flex-direction: column;
+            align-items: center;
+            // gap: 10px;
+
+            .q-tab__label {
+              font-size: 12px;
+              font-weight: 500;
+              color: #808080;
+            }
+          }
+        }
+      }
+      .q-tab--active {
+        .q-tab__icon {
+          img {
+            filter: invert(87%) sepia(89%) saturate(1%) hue-rotate(267deg)
+              brightness(185%) contrast(97%);
+          }
+        }
+        .q-tab__label {
+          color: #fff !important;
+        }
+      }
     }
   }
 }
